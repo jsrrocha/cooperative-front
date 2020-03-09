@@ -1,0 +1,27 @@
+<div class="col-md-6 col-md-offset-3">
+
+ <div class="home-container">
+	 <div class="nav-menu">
+     <div class="nav-container">
+
+  		<button class="btn-menu" mat-button [matMenuTriggerFor]="agenda">Pautas</button>
+  		<mat-menu #agenda="matMenu">
+  			<button class="btn-menu" mat-menu-item (click)="gotoAddAgenda()">Adicionar</button>
+        <button class="btn-menu" mat-menu-item (click)="gotoOpenAgendaVoting()">Abrir Votação</button>
+
+        <button class="btn-menu" mat-menu-item (click)="gotoVoteAgenda()" >Votar</button>
+        
+        <button class="btn-menu" mat-menu-item (click)="gotoResultAgendaVoting()" >Resultado de votação</button>
+  		</mat-menu>  
+ 
+    </div>
+
+    <button name="button-back" class="btn back mat-flat-button " (click)="reloadHome()">Voltar</button>
+	</div>
+
+  <div class="form-container" [hidden]=notInHome>
+     <h2>Home</h2>
+     <h3>Bem vindo, você na página inicial da cooperativa </h3> 
+  </div>
+ </div>
+</div>

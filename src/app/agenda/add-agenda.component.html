@@ -1,0 +1,16 @@
+<app-home></app-home>
+
+<div class="form-container">
+  <form ngNativeValidate [formGroup]="agendaForm">
+      <h2>Adicionar pauta</h2>
+      <div class="form-group">
+          <label for="name">Nome da pauta: </label>
+          <input type="text"  formControlName="name"
+                 class="form-control" name="name"
+                 ng-model="name" required />
+      </div>
+
+      <button name="button-client" class="btn login"
+              (click) ="addAgenda()"> Enviar </button> 
+  </form>
+</div>

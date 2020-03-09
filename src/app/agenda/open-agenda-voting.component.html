@@ -1,0 +1,25 @@
+<app-home></app-home>
+
+<div class="form-container">
+  <form ngNativeValidate [formGroup]="agendaForm">
+      <h2>Abrir votação de uma pauta</h2>
+      
+      <mat-form-field class = "agenda">
+          <mat-label> Selecione a pauta </mat-label>
+          <mat-select  [(value)]="selectAgenda"  required>
+            <mat-option *ngFor="let agenda of agendas" [value]="agenda.id"> 
+              {{agenda.name}} 
+            </mat-option>
+          </mat-select>
+        </mat-form-field>  
+      <div class="form-group">
+          <label for="time">Por quantos minutos a votação deverá ficar aberta: </label>
+          <input type="number"  formControlName="time"
+                 class="form-control" name="time"
+                 ng-model="time" required /> 
+      </div> 
+
+      <button name="button-voting" class="btn login"
+              (click) ="openAgendaVoting()"> Enviar </button> 
+  </form>
+</div>

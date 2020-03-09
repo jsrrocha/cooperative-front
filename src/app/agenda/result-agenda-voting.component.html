@@ -1,0 +1,19 @@
+<app-home></app-home>
+
+<div class="form-container">
+  <form >
+      <h2>Resultado da votação de uma pauta</h2>
+      
+      <mat-form-field class = "agenda">
+          <mat-label> Selecione a pauta </mat-label>
+          <mat-select  [(value)]="selectAgenda"  required>
+            <mat-option *ngFor="let agenda of agendas" [value]="agenda.id"> 
+              {{agenda.name}} 
+            </mat-option>
+          </mat-select>
+        </mat-form-field>  
+
+      <button name="button-voting" class="btn login"
+              (click) ="resultAgendaVoting()"> Enviar </button> 
+  </form>
+</div>

@@ -1,0 +1,37 @@
+<app-home></app-home>
+
+<div class="form-container">
+  <form >
+      <h2>Votar em uma pauta</h2>
+      
+      <mat-form-field class = "agenda">
+          <mat-label> Selecione a pauta </mat-label>
+          <mat-select  [(value)]="selectAgenda"  required>
+            <mat-option *ngFor="let agenda of agendas" [value]="agenda.id"> 
+              {{agenda.name}} 
+            </mat-option>
+          </mat-select>
+        </mat-form-field>  
+
+      <mat-form-field class = "associates">
+          <mat-label> Selecione o associado </mat-label>
+          <mat-select  [(value)]="selectAssociate"  required>
+            <mat-option *ngFor="let associate of associates" [value]="associate.id"> 
+              {{associate.name}} 
+            </mat-option>
+          </mat-select>
+        </mat-form-field>  
+        <mat-form-field class = "option">
+          <mat-label> Selecione o voto </mat-label>
+          <mat-select  [(value)]="selectOption"  required>
+            <mat-option *ngFor="let option of options" [value]="option"> 
+              {{option}}  
+            </mat-option>
+          </mat-select>
+        </mat-form-field>  
+
+  </form>
+
+  <button name="button-voting" class="btn login"
+              (click) ="voteAgenda()"> Enviar </button> 
+</div>
