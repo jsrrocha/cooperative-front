@@ -33,7 +33,6 @@ export class OpenAgendaVotingComponent {
 	    this.service.getAgendas().subscribe(
 	      (data:any)=> {
 	          this.agendas = data; 
-	          console.log(data);
 	      },
 	      error => {
 	      	 this.service.handleErrors(error);
